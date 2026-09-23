@@ -1,0 +1,101 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2" pages="2">
+  <diagram name="UseCaseDiagram" id="uc-diagram-1">
+    <mxGraphModel dx="1268" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary1" value="Hệ thống Đặt phòng - Rikkei Stay" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontSize=14;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="220" y="40" width="560" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="actor1" value="Khách hàng" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="60" y="220" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uc1" value="Tra cứu phòng trống" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="320" y="90" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc2" value="Đặt phòng" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="320" y="215" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc3" value="Hủy phòng" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="320" y="340" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=none;html=1;endArrow=none;startArrow=none;rounded=0;" parent="1" source="actor1" target="uc1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=none;html=1;endArrow=none;startArrow=none;rounded=0;" parent="1" source="actor1" target="uc2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=none;html=1;endArrow=none;startArrow=none;rounded=0;" parent="1" source="actor1" target="uc3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="ActivityDiagram_DatPhong" id="act-diagram-1">
+    <mxGraphModel dx="2168" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="420" y="20" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="act1" value="Khách hàng chọn phòng và khoảng ngày muốn đặt (ngày nhận phòng, ngày trả phòng)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="325" y="90" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="act2" value="Hệ thống kiểm tra dữ liệu hợp lệ: phòng tồn tại, ngày nhận phòng &lt; ngày trả phòng, ngày nhận phòng không ở quá khứ" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="325" y="200" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="act3" value="Hệ thống kiểm tra trùng ngày: so sánh khoảng ngày khách chọn với các phiếu đã đặt của phòng đó" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="325" y="320" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dec1" value="Có ngày nào trong khoảng đã bị trùng không?" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="365" y="440" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="act4" value="Từ chối tạo phiếu đặt phòng.&#xa;Trạng thái: TỪ CHỐI&#xa;Dữ liệu trả về: (trống)&#xa;Thông báo lỗi: Trùng ngày đặt phòng" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fontSize=12;align=left;spacingLeft=6;" parent="1" vertex="1">
+          <mxGeometry x="640" y="435" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="act5" value="Tạo phiếu đặt phòng thành công, lưu vào CSDL.&#xa;Trạng thái: THÀNH CÔNG&#xa;Dữ liệu trả về: mã phiếu, phòng, ngày nhận, ngày trả&#xa;Thông báo lỗi: (trống)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fontSize=12;align=left;spacingLeft=6;" parent="1" vertex="1">
+          <mxGeometry x="-70" y="430" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="endOuter1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="710" y="600" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="endInner1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="717" y="607" width="16" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="endOuter2" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="150" y="610" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="endInner2" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="157" y="617" width="16" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" parent="1" source="start1" target="act1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" parent="1" source="act1" target="act2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" parent="1" source="act2" target="act3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" parent="1" source="act3" target="dec1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="Có (trùng ngày)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;fontSize=12;" parent="1" source="dec1" target="act4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="Không (không trùng ngày)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;fontSize=12;" parent="1" source="dec1" target="act5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" parent="1" source="act4" target="endOuter1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" parent="1" source="act5" target="endOuter2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
